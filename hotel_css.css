@@ -1,0 +1,58 @@
+body{
+	background-color:lightblue;;
+	color:black;
+	/*to set font style of all text*/
+	font-family: "Times New Roman", Times, serif;
+	font-size:large;
+}
+table{
+	width:500px;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+h1 {
+	/*to underline header*/
+  text-decoration: underline;
+}
+td{
+	vertical-align:top;
+	padding: 5px;
+	word-wrap: break-word;
+}
+#fullpage{
+	
+	margin: 100px;
+}
+.label_col{
+	text-align: right;
+}
+.input_col{
+	text-align: left;
+}
+.feedback_col{
+	text-align: center;
+	vertical-align: middle;
+	color: LightGray;
+	font-size: small;
+}
+.test{
+	/*aligns picture on top right*/
+	position: absolute;
+    top: 100px;
+    right: 50px;
+	/*to adjust size of image*/
+	width:600px;
+	height:400px;
+}
+button{
+	/* to adjust size of button*/
+	width: 120px;
+	height: 40px;
+	text-align: center;
+	/*background color of button*/
+	background-color:navy;
+    color: white;
+	/*to get red border around button*/
+	 border: 2px solid red;
+	font-weight: bold;
+}

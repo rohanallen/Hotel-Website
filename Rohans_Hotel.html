@@ -1,0 +1,114 @@
+<!--DOCTYPE HTML-->
+<html>
+<head>
+<!-- Metadata about html file-->
+<meta charset="utf-8">
+<meta name="Rohan" content="Hotel Reservation Form">
+<!--Link to external CSS Sheet-->
+<link rel ="stylesheet" type="text/css" href="hotel_css.css">
+<!--Title of Webpage-->
+<title>Rohan's Hotel</title>
+<!-- Link to external Javascript file-->
+<script type="text/javascript" src="javascript_hotel.js"></script>
+</head>
+<body>
+<form name="myForm">
+<div id="fullpage">
+<!--Header-->
+<h1>  Hotel Reservation Form</h1>
+<!-- table is used to structure form, border is 0 so line cant be seen -->
+<table border="0"> 
+<tr>
+<!--First Row of table, each row has 3 elements for label,input and feedback
+first name is validated using onblur function in java script and message is spanned in feedback_col-->
+<td class="label_col">First Name:</td>
+<td class="input_col"><input name="firstName" id="firstName" type="text" placeholder="Enter First Name" onblur="validateFirstName();" required></td>
+<td class="feedback_col"><span id="firstNamePrompt">&nbsp;</span></td>
+</tr>
+<tr>
+<!--last name is validated using onblur function in java script and message is spanned in feedback_col-->
+<td class="label_col">Last Name:</td>
+<td class="input_col"><input name="lastName" id="lastName" type="text" placeholder="Enter Last Name" onblur="validateLastName();" required></td>
+<td class="feedback_col"><span id="lastNamePrompt">&nbsp;</span></td>
+</tr>
+<tr>
+<!--phone no is validated using onblur function in java script and message is spanned in feedback_col-->
+<td class="label_col">Phone Number:</td>
+<td class="input_col"><input name="phone" id="phone" placeholder="xxx-xxx-xxxx" type="text" onblur="validatePhone();" required></td>
+<td class="feedback_col"><span id="phonePrompt">&nbsp;</span></td>
+</tr>
+<tr>
+<!--email is validated using onblur function in java script and message is spanned in feedback_col-->
+<td class="label_col">Email:</td>
+<td class="input_col"><input name="email" id="email" type="text" placeholder="Enter email" onblur="validateEmail();" required></td>
+<td class="feedback_col"><span id="emailPrompt">&nbsp;</span></td>
+</tr>
+<tr>
+<!--Drop down menu for selecting branch of hotel, Dubai is selected by default-->
+<td class="label_col">Choose Branch:</td>
+<td class="input_col"><select id="branch" name="cities" size="1" required>
+    <option value="Abu Dhabi">Abu Dhabi</option>
+    <option value="Dubai" selected="selected">Dubai</option>
+    <option value="Sharjah">Sharjah</option>
+    <option value="Ajman">Ajman</option>
+	<option value="Umm Al Quain">Umm Al Quain</option>
+	<option value="Ras Al Khaimah">Ras Al Khaimah</option>
+	<option value="Fujairah">Fujairah</option>
+  </select>
+  </td>
+<td class="feedback_col"><span id="branchPrompt">&nbsp;</span></td>
+</tr>
+<tr>
+<!--Drop down menu for selecting no of rooms, 1 is selected by default-->
+<td class="label_col">Number of Rooms:</td>
+<td class="input_col"><select id="no" name="no" size="1"  required>
+    <option value="one" selected="selected">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+    <option value="four">4</option>
+  </select>
+  </td>
+<td class="feedback_col"><span id="noPrompt">&nbsp;</span></td>
+</tr>
+<tr>
+<!--To input check in date. Max date set to 21st dec 2020. Min date set on clicking the date field by invoking setCheckIn function.
+Validated using onblur function.-->
+<td class="label_col">Check In:</td>
+<td class="input_col"><input name="checkin" id="checkin" type="date"  max="2020-12-21" onclick="setCheckIn();" onblur="validateCheckIn();" required></td>
+<td class="feedback_col"><span id="checkinPrompt">&nbsp;</span></td>
+</tr>
+<tr>
+<!--To input check out date. Max date set to 31st dec 2020. Min date set on clicking the date field by invoking setCheckOut function.
+Validated using onblur function.-->
+<td class="label_col">Check Out:</td>
+<td class="input_col"><input name="checkout" id="checkout" type="date" max="2020-12-31" onclick="setCheckOut();" onblur="validateCheckOut();" required></td>
+<td class="feedback_col"><span id="checkoutPrompt">&nbsp;</span></td>
+</tr>
+
+<tr>
+<!-- Two radio buttons Yes and No for if the user wants a balcony or not. By default yes is checked. Only one can be chosen-->
+<td class="label_col">Room with Balcony:</td>
+<td class="input_col"><input type="radio" name="room" value="Yes" checked>Yes
+<input type="radio" name="room" value="No">No</td>
+<td class="feedback_col"><span id="balconyPrompt">&nbsp;</span></td>
+</tr>
+<tr>
+<!-- Two checkboxes for how the user heard about the hotel. Multiple checkboxes can be checked-->
+<td class="label_col">How Did You Hear About Us:</td>
+<td class="input_col"><input type="checkbox" name="rooms" value="Friends"> Friend Circle<br>
+<input type="checkbox" name="rooms" value="Online"> Online Ads</td>
+<td class="feedback_col"><span id="feedbackPrompt">&nbsp;</span></td>
+</tr>
+<tr>
+<!-- A button to reserve the room. On clicking it validates if the entire form is filled-->
+<td class="label_col">      </td>
+<td class="input_col"> <br> <button type="button" id="reserve" onclick="validateForm();"> Reserve Room </button> </td>
+<td class="feedback_col"><span id="buttonPrompt">&nbsp;</span></td>
+</tr>
+</table>
+</div>
+</form>
+<!--An image of the hotel room -->
+<img class="test" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2019%2F04%2Fheckfield-place-guest-room-HMHECKFIELD0419.jpg"/>
+</body>
+</html>
